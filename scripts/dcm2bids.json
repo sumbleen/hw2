@@ -1,0 +1,51 @@
+{
+    "descriptions": [
+      {
+          "dataType": "func",
+          "modalityLabel": "sbref",
+          "customLabels": "task-words",
+          "criteria": {
+              "ProtocolName": "INSERT Correct ProtocolName",
+              "ImageComments": "Single-band_reference",
+              "PhaseEncodingDirection": "j-"
+          }
+      },
+      {
+          "dataType": "func",
+          "modalityLabel": "bold",
+          "customLabels": "task-words",
+          "criteria": {
+              "ProtocolName": "INSERT Correct ProtocolName",
+              "ImageComments": "Unaliased_MB4_PE3_LB",
+              "PhaseEncodingDirection": "j-"
+          }
+      },
+      {
+          "dataType": "func",
+          "modalityLabel": "sbref",
+          "customLabels": "task-motor",
+          "criteria": {
+              "ProtocolName": "INSERT Correct ProtocolName",
+              "ImageComments": "Single-band_reference",
+              "PhaseEncodingDirection": "j-"
+          }
+      },
+      {
+          "dataType": "func",
+          "modalityLabel": "bold",
+          "customLabels": "task-motor",
+          "criteria": {
+              "ProtocolName": "INSERT Correct ProtocolName",
+              "ImageComments": "Unaliased_MB4_PE3_LB",
+              "PhaseEncodingDirection": "j-"
+          }
+      },
+      {
+            "dataType": "anat",
+            "modalityLabel": "T1w",
+            "criteria": {
+                "SeriesDescription": "T1w_MPR",
+            }
+        }
+    ]
+}
