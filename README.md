@@ -4,6 +4,25 @@ Due by 11:59pm the evening of 9/24.
 ## Textbook Reading
 Read chapter 8.
 
+## Regular Expressions
+Write a regular expression to extract (i.e. store in a regex group) the *italicized* portions of the following strings. The same regex should work for each set of strings.
+
+Your expressions will be evaluated using the python mode of [regex101.com](http://regex101.com)
+
+#####A BIDS-style file name (set 1)
+
+- sub-*1000*\_task-*nback*\_acq-*singleband*\_run-*03*\_*bold*
+- sub-*EXP23*\_task-*rest*\_acq-*multiband*\_run-*01*\_*bold*
+
+#####A 10 digit US phone number (set 2):
+You should capture 3 groups, containing the area code, exchange and number, but not any separators or country code.
+
+- +1 *123*\-*456*\-*7891*
+- (*123*) *555*-*5555*
+- *860*.*865*.*9805*
+- 1-*800*-*865*-*9805*
+
+Submit your two regular expressions in a Markdown file `regex/README.md`
 
 
 ## Discussion Paper Reading
