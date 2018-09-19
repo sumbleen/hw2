@@ -1,5 +1,19 @@
 # HW 2
-Due by midnight the evening of 9/10.
+Due by 11:59pm the evening of 9/24.
+
+## Textbook Reading
+Read chapter 8.
+
+
+
+## Discussion Paper Reading
+
+Read at least one of the papers posted in #discussion on Slack and be prepared to discuss in class. Feel free to discuss in the #discussion channel before class!
+
+## Start Learning Python
+
+Although shell scripting is a useful tool that we will continue to rely on, some things are better done in a more powerful language such as Python. Begin the free modules of the [Python Code Academy course](https://www.codecademy.com/learn/learn-python). You should try to get 1/3 to 1/2 through or so.
+
 
 ## Overview
 In this homework, you will practice downloading your data from NiDB and converting it into a [BIDS](http://bids.neuroimaging.io) structure.
@@ -24,7 +38,6 @@ Download the IBRAIN002 (S0318ANN) data from [NiDB](http://psypacs.psy.uconn.edu/
 
 The appropriate export options are below
 
-![](img/nidb1.png)
 
 ![](img/nidb2.png)
 
@@ -118,5 +131,6 @@ You will want to set appropriate values for `-d`, `-p` (IBRAIN002), `-c` (the `d
 ## Submit
 
 Commit your work and create a pull request. The data files will not be committed to conserve space.
+
 
 
