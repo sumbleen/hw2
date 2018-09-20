@@ -44,7 +44,7 @@
             "dataType": "anat",
             "modalityLabel": "T1w",
             "criteria": {
-                "SeriesDescription": "T1w_MPR",
+                "SeriesDescription": "T1w_MPR"
             }
         }
     ]
