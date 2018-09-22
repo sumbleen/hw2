@@ -1,0 +1,82 @@
+--- dcm2bids start ---
+subprocess: dcm2niix
+
+Chris Rorden's dcm2niiX version v1.0.20180826 BETA  (JP2:OpenJPEG) GCC5.4.0 (64-bit Linux)
+usage: dcm2niix [options] <in_folder>
+ Options :
+  -1..-9 : gz compression level (1=fastest..9=smallest, default 6)
+  -b : BIDS sidecar (y/n/o [o=only: no NIfTI], default y)
+   -ba : anonymize BIDS (y/n, default y)
+  -c : comment stored in NIfTI aux_file (up to 24 characters)
+  -d : directory search depth. Convert DICOMs in sub-folders of in_folder? (0..9, default 5)
+  -f : filename (%a=antenna  (coil) number, %b=basename, %c=comments, %d=description, %e=echo number, %f=folder name, %i=ID of patient, %j=seriesInstanceUID, %k=studyInstanceUID, %m=manufacturer, %n=name of patient, %p=protocol, %r=instance number, %s=series number, %t=time, %u=acquisition number, %v=vendor, %x=study ID; %z=sequence name; default '%f_%p_%t_%s')
+  -g : generate defaults file (y/n/o/i [o=only: reset and write defaults; i=ignore: reset defaults], default n)
+  -h : show help
+  -i : ignore derived, localizer and 2D images (y/n, default n)
+  -l : losslessly scale 16-bit integers to use dynamic range (y/n, default n)
+  -m : merge 2D slices from same series regardless of study time, echo, coil, orientation, etc. (y/n, default n)
+  -n : only convert this series number - can be used up to 16 times (default convert all)
+  -o : output directory (omit to save to input folder)
+  -p : Philips precise float (not display) scaling (y/n, default y)
+  -r : rename instead of convert DICOMs (y/n, default n)
+  -s : single file mode, do not convert other images in folder (y/n, default n)
+  -t : text notes includes private patient details (y/n, default n)
+  -u : up-to-date check
+  -v : verbose (n/y or 0/1/2 [no, yes, logorrheic], default 0)
+  -x : crop (y/n, default n)
+  -z : gz compress images (y/i/n/3, default n) [y=pigz, i=internal:miniz, n=no, 3=no,3D]
+ Defaults file : /root/.dcm2nii.ini
+ Examples :
+  dcm2niix /Users/chris/dir
+  dcm2niix -c "my comment" /Users/chris/dir
+  dcm2niix -o /users/cr/outdir/ -z y ~/dicomdir
+  dcm2niix -f %p_%s -b y -ba n ~/dicomdir
+  dcm2niix -f mystudy%s ~/dicomdir
+  dcm2niix -o "~/dir with spaces/dir" ~/dicomdir
+
+dcm2niix:version: v1.0.20180826
+participant: 002
+session: None
+config: /bind/scripts/dcm2bids.json
+BIDS directory: /bind/bids
+
+--- running dcm2niix ---
+subprocess: dcm2niix -b y -ba y -z y -f '%3s_%f_%p_%t' -o /bind/bids/tmp_dcm2bids/sub-002 /bind/raw/IBRAIN002
+
+Chris Rorden's dcm2niiX version v1.0.20180826 BETA  (JP2:OpenJPEG) GCC5.4.0 (64-bit Linux)
+Found 742 DICOM file(s)
+Convert 208 DICOM as /bind/bids/tmp_dcm2bids/sub-002/005_IBRAIN002_T1w_MPR_20171114132143 (300x320x208x1)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/005_IBRAIN002_T1w_MPR_20171114132143.nii"
+Convert 1 DICOM as /bind/bids/tmp_dcm2bids/sub-002/007_IBRAIN002_fMRI_words_run1_20171114132143 (102x102x72x1)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/007_IBRAIN002_fMRI_words_run1_20171114132143.nii"
+slices stacked despite varying acquisition numbers (if this is not desired recompile with 'mySegmentByAcq')
+Convert 263 DICOM as /bind/bids/tmp_dcm2bids/sub-002/008_IBRAIN002_fMRI_words_run1_20171114132143 (102x102x72x263)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/008_IBRAIN002_fMRI_words_run1_20171114132143.nii"
+Convert 1 DICOM as /bind/bids/tmp_dcm2bids/sub-002/009_IBRAIN002_fMRI_words_run2_20171114132143 (102x102x72x1)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/009_IBRAIN002_fMRI_words_run2_20171114132143.nii"
+slices stacked despite varying acquisition numbers (if this is not desired recompile with 'mySegmentByAcq')
+Convert 263 DICOM as /bind/bids/tmp_dcm2bids/sub-002/010_IBRAIN002_fMRI_words_run2_20171114132143 (102x102x72x263)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/010_IBRAIN002_fMRI_words_run2_20171114132143.nii"
+slices stacked despite varying acquisition numbers (if this is not desired recompile with 'mySegmentByAcq')
+Convert 3 DICOM as /bind/bids/tmp_dcm2bids/sub-002/011_IBRAIN002_SpinEchoFieldMap_AP_20171114132143 (102x102x72x3)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/011_IBRAIN002_SpinEchoFieldMap_AP_20171114132143.nii"
+slices stacked despite varying acquisition numbers (if this is not desired recompile with 'mySegmentByAcq')
+Convert 3 DICOM as /bind/bids/tmp_dcm2bids/sub-002/012_IBRAIN002_SpinEchoFieldMap_ROPE_20171114132143 (102x102x72x3)
+compress: "/usr/bin/pigz" -n -f -6 "/bind/bids/tmp_dcm2bids/sub-002/012_IBRAIN002_SpinEchoFieldMap_ROPE_20171114132143.nii"
+Conversion required 59.631743 seconds (7.396331 for core code).
+
+
+Sidecars matching:
+MATCH           005_IBRAIN002_T1w_MPR_20171114132143.json
+MATCH           007_IBRAIN002_fMRI_wor..n1_20171114132143.json
+MATCH           008_IBRAIN002_fMRI_wor..n1_20171114132143.json
+MATCH           009_IBRAIN002_fMRI_wor..n2_20171114132143.json
+MATCH           010_IBRAIN002_fMRI_wor..n2_20171114132143.json
+NO MATCH        011_IBRAIN002_SpinEcho..AP_20171114132143.json
+NO MATCH        012_IBRAIN002_SpinEcho..PE_20171114132143.json
+
+Checking if a description matches several sidecars ...
+'task-words_bold' has several runs
+'task-words_sbref' has several runs
+
+moving acquisitions into BIDS output directory
